@@ -1,6 +1,6 @@
 import { AdaptableButton, DashboardOptions, ExportOptions } from "@adaptabletools/adaptable-angular-aggrid";
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
-import { ExcelStyle, Module } from "@ag-grid-community/core";
+import { ExcelStyle, GridOptions, Module } from "@ag-grid-community/core";
 import { ClipboardModule } from "@ag-grid-enterprise/clipboard";
 import { ColumnsToolPanelModule } from "@ag-grid-enterprise/column-tool-panel";
 import { ExcelExportModule } from "@ag-grid-enterprise/excel-export";
@@ -12,6 +12,7 @@ import { SetFilterModule } from "@ag-grid-enterprise/set-filter";
 import { SideBarModule } from "@ag-grid-enterprise/side-bar";
 import { AdaptableModuleButtons } from "@adaptabletools/adaptable/src/PredefinedConfig/Common/Types";
 import { CsvExportModule } from "@ag-grid-community/csv-export";
+import { StatusBarModule } from "@ag-grid-enterprise/status-bar";
 
 export class CommonConfig{
 
@@ -34,6 +35,29 @@ export class CommonConfig{
     //     }
     //   }]
 
+    public static ADAPTABLE_GRID_OPTIONS : GridOptions = {
+        statusBar:{
+          statusPanels:[
+            {
+              key: 'Left Panel',
+              statusPanel: 'AdaptableStatusPanel',
+              align: 'left',
+            },
+            {
+              key: 'Center Panel',
+              statusPanel: 'AdaptableStatusPanel',
+              align: 'center',
+            },
+            {
+              key: 'Right Panel',
+              statusPanel: 'AdaptableStatusPanel',
+              align: 'right',
+            },
+          ]
+        }
+      }
+  
+
     public static AG_GRID_MODULES: Module[] = [
         ClientSideRowModelModule,
         SetFilterModule,
@@ -45,7 +69,8 @@ export class CommonConfig{
         ClipboardModule,
         SideBarModule,
         RangeSelectionModule,
-        RowGroupingModule
+        RowGroupingModule,
+        StatusBarModule
       ];
 
     // public static DASHBOARD_MODULE_BUTTONS: AdaptableModuleButtons = ['SettingsPanel', 'TeamSharing', 'Export','StyledColumn', 'Layout', 'Filter']

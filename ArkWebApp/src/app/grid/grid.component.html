@@ -1,0 +1,33 @@
+<div class="style-action">
+    <button mat-raised-button color="primary"
+    (click)="onTest1()" style="margin-right: 10px;">Test 1 Grid
+    </button>
+
+    <button mat-raised-button color="primary"
+    (click)="onTest2()" style="margin-left: 10px;">Test 2 Grid
+    </button>
+</div>
+
+<ag-grid-angular *ngIf = "boolflag"
+[modules]="agGridModules"
+[adaptableOptions]="commonadaptableOptions"
+[gridOptions]="commongridOptions"
+[rowGroupPanelShow]="'always'"
+[rowData]="rowData1"
+(gridReady)="onGridReady($event)"
+(adaptableReady)="onAdaptableReady($event)"
+class="ag-theme-alpine ag-grid">
+</ag-grid-angular>
+
+
+<ag-grid-angular *ngIf = "!boolflag"
+[modules]="agGridModules"
+[adaptableOptions]="commonadaptableOptions"
+[gridOptions]="commongridOptions"
+[rowGroupPanelShow]="'always'"
+[rowData]="rowData2"
+(gridReady)="onGridReady($event)"
+(adaptableReady)="onAdaptableReady($event)"
+class="ag-theme-alpine ag-grid">
+</ag-grid-angular>
+

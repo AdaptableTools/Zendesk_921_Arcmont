@@ -32,10 +32,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({  
   declarations: [  
-    AppComponent, 
+    AppComponent, GridComponent, 
     // UnauthorizedComponent, HomeComponent, DetailedViewComponent, AccessControlComponent
   ],  
   imports: [  
