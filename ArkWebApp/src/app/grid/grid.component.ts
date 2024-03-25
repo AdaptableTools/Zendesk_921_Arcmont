@@ -23,8 +23,8 @@ export class GridComponent implements OnInit {
   commonadaptableOptions: AdaptableOptions = this.t1Svc.adaptableOptions
   boolflag: boolean = true
 
-  constructor( 
-    private t1Svc: Test1Service, 
+  constructor(
+    private t1Svc: Test1Service,
     private t2Svc: Test2Service
 ) {}
 
@@ -46,12 +46,14 @@ export class GridComponent implements OnInit {
   }
 
   onTest1(){
+    this.t1Svc.init();
     this.commongridOptions = this.t1Svc.gridOptions
     this.commonadaptableOptions = this.t1Svc.adaptableOptions
     this.boolflag = true
   }
 
   onTest2(){
+    this.t2Svc.init();
     this.commongridOptions = this.t2Svc.gridOptions
     this.commonadaptableOptions = this.t2Svc.adaptableOptions
     this.boolflag = false
